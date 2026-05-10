@@ -14,7 +14,7 @@ export default function FAQs() {
         <div style={{ maxWidth: 700, margin: '0 auto' }}>
           <span style={{ color: '#60a5fa', fontWeight: 700, fontSize: 13, textTransform: 'uppercase', letterSpacing: '1.5px' }}>Got Questions?</span>
           <h1 style={{ fontFamily: 'Poppins, sans-serif', fontSize: '3rem', fontWeight: 800, color: 'white', margin: '16px 0 20px' }}>Frequently Asked Questions</h1>
-          <p style={{ color: '#cbd5e1', fontSize: 17, lineHeight: 1.8 }}>Everything you need to know about ZenEdify's services and process.</p>
+          <p style={{ color: '#cbd5e1', fontSize: 17, lineHeight: 1.8 }}>Everything you need to know about ZenEdify&aposs services and process.</p>
         </div>
       </section>
 
