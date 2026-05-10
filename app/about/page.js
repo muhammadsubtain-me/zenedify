@@ -1,5 +1,9 @@
 import Link from 'next/link';
 import SectionHeader from '../../components/SectionHeader';
+import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '../../components/ui/card';
+import { Badge } from '../../components/ui/badge';
+import { Separator } from '../../components/ui/separator';
+import { Button } from '../../components/ui/button';
 
 export const metadata = {
   title: 'About',
@@ -25,67 +29,81 @@ const values = [
 export default function About() {
   return (
     <div>
-      <section className="bg-gradient-to-br from-[#0f172a] to-[#1e3a5f] py-[72px] px-6 text-center">
-        <div className="max-w-[700px] mx-auto">
-          <span className="text-[#60a5fa] font-bold text-[13px] uppercase tracking-[1.5px]">Our Story</span>
-          <h1 className="font-[Poppins,sans-serif] text-[3rem] font-extrabold text-white mt-4 mb-5">About ZenEdify</h1>
-          <p className="text-[#cbd5e1] text-[17px] leading-[1.8]">The place of academic experts — empowering students worldwide to achieve their full potential.</p>
+      <section style={{ background: 'linear-gradient(135deg,#0f172a,#1e3a5f)', padding: '72px 24px', textAlign: 'center' }}>
+        <div style={{ maxWidth: 700, margin: '0 auto' }}>
+          <span style={{ color: '#60a5fa', fontWeight: 700, fontSize: 13, textTransform: 'uppercase', letterSpacing: '1.5px' }}>Our Story</span>
+          <h1 style={{ fontFamily: 'Poppins, sans-serif', fontSize: '3rem', fontWeight: 800, color: 'white', margin: '16px 0 20px' }}>About ZenEdify</h1>
+          <p style={{ color: '#cbd5e1', fontSize: 17, lineHeight: 1.8 }}>The place of academic experts — empowering students worldwide to achieve their full potential.</p>
         </div>
       </section>
 
-      <section className="py-[80px] px-6">
-        <div className="max-w-[1200px] mx-auto grid grid-cols-2 gap-[64px] items-center">
+      <section style={{ padding: '80px 24px' }}>
+        <div style={{ maxWidth: 1200, margin: '0 auto', display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 64, alignItems: 'center' }}>
           <div>
-            <span className="text-[#2563eb] font-bold text-[13px] uppercase tracking-[1.5px]">Who We Are</span>
-            <h2 className="section-title mt-3 mb-5">ZenEdify — Place Of Experts</h2>
-            <p className="text-[#64748b] leading-[1.85] mb-4 text-[15px]">Our world-class academic advisers enable professionals and students to succeed by offering top-quality academic solutions. Our experienced team members are skilled tutors who will use their expertise to produce a fantastic paper for you.</p>
-            <p className="text-[#64748b] leading-[1.85] mb-4 text-[15px]">ZenEdify provides the best in coursework, dissertation, lab tasks, exam preparations, programming assignments and essays. As the leading academic assignment service, we make sure that all of your papers are well-written, distinctive, and professional.</p>
-            <p className="text-[#64748b] leading-[1.85] text-[15px]">We have the resources and know-how to speed up your ascent up the success ladder.</p>
+            <span style={{ color: '#2563eb', fontWeight: 700, fontSize: 13, textTransform: 'uppercase', letterSpacing: '1.5px' }}>Who We Are</span>
+            <h2 className="section-title" style={{ margin: '12px 0 20px' }}>ZenEdify — Place Of Experts</h2>
+            <p style={{ color: '#64748b', lineHeight: 1.85, marginBottom: 16, fontSize: 15 }}>Our world-class academic advisers enable professionals and students to succeed by offering top-quality academic solutions. Our experienced team members are skilled tutors who will use their expertise to produce a fantastic paper for you.</p>
+            <p style={{ color: '#64748b', lineHeight: 1.85, marginBottom: 16, fontSize: 15 }}>ZenEdify provides the best in coursework, dissertation, lab tasks, exam preparations, programming assignments and essays. As the leading academic assignment service, we make sure that all of your papers are well-written, distinctive, and professional.</p>
+            <p style={{ color: '#64748b', lineHeight: 1.85, fontSize: 15 }}>We have the resources and know-how to speed up your ascent up the success ladder.</p>
           </div>
-          <div className="bg-gradient-to-br from-[#dbeafe] to-[#ede9fe] rounded-3xl p-12 text-center">
-            <div className="text-[80px] mb-5">🏛️</div>
-            <h3 className="font-[Poppins,sans-serif] text-[1.6rem] text-[#0f172a] mb-3">Our Mission</h3>
-            <p className="text-[#64748b] leading-[1.8] text-[15px]">To provide accessible, high-quality academic assistance that empowers every student to excel in their studies and achieve their academic goals.</p>
-          </div>
+          <Card style={{ background: 'linear-gradient(135deg,#dbeafe,#ede9fe)', border: 'none' }}>
+            <CardHeader className="text-center p-12">
+              <div style={{ fontSize: 80, marginBottom: 8 }}>🏛️</div>
+              <CardTitle className="text-2xl">Our Mission</CardTitle>
+              <CardDescription className="text-base leading-relaxed">
+                To provide accessible, high-quality academic assistance that empowers every student to excel in their studies and achieve their academic goals.
+              </CardDescription>
+            </CardHeader>
+          </Card>
         </div>
       </section>
 
-      <section className="py-[80px] px-6 bg-[#f8fafc]">
-        <div className="max-w-[1200px] mx-auto">
+      <Separator />
+
+      <section style={{ padding: '80px 24px', background: '#f8fafc' }}>
+        <div style={{ maxWidth: 1200, margin: '0 auto' }}>
           <SectionHeader subtitle="Our Principles" title="Our Core Values" desc="The foundation that guides everything we do at ZenEdify." />
-          <div className="grid grid-cols-3 gap-7">
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 28 }}>
             {values.map(v => (
-              <div key={v.title} className="card-hover bg-white rounded-2xl p-7 border border-[#e2e8f0]">
-                <div className="text-[36px] mb-4">{v.icon}</div>
-                <h3 className="font-bold text-[18px] text-[#0f172a] mb-2.5">{v.title}</h3>
-                <p className="text-[#64748b] text-[14px] leading-[1.7]">{v.desc}</p>
-              </div>
+              <Card key={v.title} className="card-hover">
+                <CardHeader>
+                  <div style={{ fontSize: 36, marginBottom: 8 }}>{v.icon}</div>
+                  <CardTitle className="text-lg">{v.title}</CardTitle>
+                  <CardDescription>{v.desc}</CardDescription>
+                </CardHeader>
+              </Card>
             ))}
           </div>
         </div>
       </section>
 
-      <section className="py-[80px] px-6">
-        <div className="max-w-[1200px] mx-auto">
+      <Separator />
+
+      <section style={{ padding: '80px 24px' }}>
+        <div style={{ maxWidth: 1200, margin: '0 auto' }}>
           <SectionHeader subtitle="Our Experts" title="ZenEdify Experts" desc="Meet some of our world-class academic tutors ready to help you succeed." />
-          <div className="grid grid-cols-4 gap-7">
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: 28 }}>
             {team.map(t => (
-              <div key={t.name} className="card-hover bg-white rounded-2xl p-7 border border-[#e2e8f0] text-center">
-                <div className="text-[56px] mb-4">{t.emoji}</div>
-                <h3 className="font-bold text-[15px] text-[#0f172a] mb-1">{t.name}</h3>
-                <p className="text-[#2563eb] text-[13px] font-semibold mb-2">{t.role}</p>
-                <p className="text-[#94a3b8] text-[12px]">{t.expertise}</p>
-              </div>
+              <Card key={t.name} className="card-hover text-center">
+                <CardHeader className="items-center">
+                  <div style={{ fontSize: 56, marginBottom: 8 }}>{t.emoji}</div>
+                  <CardTitle className="text-sm">{t.name}</CardTitle>
+                  <Badge variant="secondary" className="text-xs">{t.role}</Badge>
+                  <CardDescription className="text-xs">{t.expertise}</CardDescription>
+                </CardHeader>
+              </Card>
             ))}
           </div>
         </div>
       </section>
 
-      <section className="py-[80px] px-6 bg-gradient-to-br from-[#0f172a] via-[#1e3a5f] to-[#2563eb] text-center">
-        <div className="max-w-[600px] mx-auto">
-          <h2 className="font-[Poppins,sans-serif] text-[2.2rem] font-extrabold text-white mb-4">Join Thousands of Happy Students</h2>
-          <p className="text-white/80 text-[16px] mb-8 leading-[1.7]">Get the academic help you deserve from qualified experts.</p>
-          <Link href="/contact" className="btn-primary text-[16px] py-[14px] px-[32px]">Get In Touch →</Link>
+      <section style={{ padding: '80px 24px', background: 'linear-gradient(135deg,#0f172a,#1e3a5f,#2563eb)', textAlign: 'center' }}>
+        <div style={{ maxWidth: 600, margin: '0 auto' }}>
+          <h2 style={{ fontFamily: 'Poppins, sans-serif', fontSize: '2.2rem', fontWeight: 800, color: 'white', marginBottom: 16 }}>Join Thousands of Happy Students</h2>
+          <p style={{ color: 'rgba(255,255,255,0.8)', fontSize: 16, marginBottom: 32, lineHeight: 1.7 }}>Get the academic help you deserve from qualified experts.</p>
+          <Button asChild size="lg">
+            <Link href="/contact">Get In Touch →</Link>
+          </Button>
         </div>
       </section>
     </div>

@@ -3,26 +3,40 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --primary: #2563eb;
-  --primary-dark: #1d4ed8;
-  --secondary: #f59e0b;
-  --accent: #10b981;
-  --dark: #0f172a;
-  --gray: #64748b;
-  --light-bg: #f8fafc;
-}
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+    --primary: 221.2 83.2% 53.3%;
+    --primary-foreground: 210 40% 98%;
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 221.2 83.2% 53.3%;
+    --radius: 0.75rem;
+  }
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    border-color: hsl(var(--border));
+  }
 
-body {
-  font-family: 'Poppins', sans-serif;
-  color: #0f172a;
-  scroll-behavior: smooth;
+  body {
+    font-family: 'Poppins', sans-serif;
+    color: #0f172a;
+    scroll-behavior: smooth;
+    background-color: hsl(var(--background));
+    color: hsl(var(--foreground));
+  }
 }
 
 .hero-gradient {
@@ -30,17 +44,6 @@ body {
 }
 
 /* ===== Keyframe Animations ===== */
-@keyframes gradientShift {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
-}
-
-@keyframes shimmer {
-  0% { left: -100%; }
-  100% { left: 150%; }
-}
-
 @keyframes fadeInUp {
   from { opacity: 0; transform: translateY(30px); }
   to { opacity: 1; transform: translateY(0); }
@@ -55,11 +58,6 @@ body {
   0% { box-shadow: 0 0 0 0 rgba(37,99,235,0.35); }
   70% { box-shadow: 0 0 0 12px rgba(37,99,235,0); }
   100% { box-shadow: 0 0 0 0 rgba(37,99,235,0); }
-}
-
-@keyframes spinGlow {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
 }
 
 /* ===== Blue Border Cards ===== */
@@ -94,7 +92,6 @@ body {
   background: #1d4ed8;
   transform: translateY(-2px);
   box-shadow: 0 8px 20px rgba(37,99,235,0.35);
-  animation: pulse-ring 1.5s infinite;
 }
 
 .btn-outline {
