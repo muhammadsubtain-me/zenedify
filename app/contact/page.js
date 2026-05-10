@@ -17,7 +17,7 @@ export default function Contact() {
         <div style={{ maxWidth: 700, margin: '0 auto' }}>
           <span style={{ color: '#60a5fa', fontWeight: 700, fontSize: 13, textTransform: 'uppercase', letterSpacing: '1.5px' }}>Get In Touch</span>
           <h1 style={{ fontFamily: 'Poppins, sans-serif', fontSize: '3rem', fontWeight: 800, color: 'white', margin: '16px 0 20px' }}>Contact Us</h1>
-          <p style={{ color: '#cbd5e1', fontSize: 17, lineHeight: 1.8 }}>We're here to help. Reach out to our team anytime.</p>
+          <p style={{ color: '#cbd5e1', fontSize: 17, lineHeight: 1.8 }}>We&aposre here to help. Reach out to our team anytime.</p>
         </div>
       </section>
 
