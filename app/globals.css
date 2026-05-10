@@ -36,7 +36,16 @@
     scroll-behavior: smooth;
     background-color: hsl(var(--background));
     color: hsl(var(--foreground));
+    overflow-x: hidden;
   }
+html, body{
+  width: 100%;
+  height: 100%;
+  margin: 0px;
+  padding: 0px;
+  overflow-x: hidden;;
+}
+  img { max-width: 100%; height: auto; }
 }
 
 .hero-gradient {
@@ -194,3 +203,77 @@
 
 footer a { text-decoration: none; color: #94a3b8; transition: color 0.2s; }
 footer a:hover { color: #60a5fa; }
+
+/* ===== Engineering Page Hero Title ===== */
+.discipline-title {
+  font-family: 'Poppins, sans-serif';
+  font-size: 3rem;
+  font-weight: 800;
+  color: white;
+  line-height: 1.2;
+}
+.discipline-hero-flex {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  margin: 16px 0 12px;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 768px) {
+  .discipline-title { font-size: 1.8rem !important; }
+  .discipline-hero-flex .discipline-title { text-align: center; }
+}
+.hero-grid          { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
+.two-col-grid       { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center; }
+.three-col-grid     { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; }
+.four-col-grid      { display: grid; grid-template-columns: repeat(4, 1fr); gap: 40px; }
+.stats-inner        { background: linear-gradient(135deg,#f0f9ff,#ede9fe); border-radius: 24px; padding: 48px 40px; }
+.contact-grid       { display: grid; grid-template-columns: 1fr 1.4fr; gap: 60px; }
+.footer-grid        { display: grid; grid-template-columns: 1.4fr 1fr 1.8fr; gap: 48px; padding-bottom: 40px; }
+
+.page-hero-title    { font-family: 'Poppins, sans-serif'; font-size: 3rem; font-weight: 800; color: white; margin: 16px 0 20px; }
+.home-hero-title    { font-family: 'Poppins, sans-serif'; font-size: 3.2rem; font-weight: 800; color: #0f172a; line-height: 1.15; margin-bottom: 24px; }
+.hero-image-wrap    { display: flex; justify-content: center; align-items: center; margin-left: 100px; margin-bottom: 30px; margin-right: 40px; }
+
+@media (max-width: 768px) {
+  /* Typography */
+  .section-title    { font-size: 1.6rem !important; }
+  .counter-num      { font-size: 2rem !important; }
+  .page-hero-title  { font-size: 2rem !important; }
+  .home-hero-title  { font-size: 2rem !important; }
+
+  /* Grids → single column */
+  .hero-grid,
+  .two-col-grid,
+  .three-col-grid,
+  .four-col-grid,
+  .contact-grid,
+  .footer-grid      { grid-template-columns: 1fr !important; gap: 32px !important; }
+
+  /* Stats inner box */
+  .stats-inner      { padding: 32px 20px !important; }
+
+  /* Hero image: remove the large left-margin offset */
+  .hero-image-wrap  { margin: 0 !important; }
+
+  /* Hero section padding */
+  .hero-section     { padding: 40px 20px !important; }
+
+  /* Generic section padding reduction */
+  section           { padding-left: 16px !important; padding-right: 16px !important; }
+
+  /* Page hero h1 */
+  h1[style*="3rem"] { font-size: 2rem !important; }
+
+  /* Testimonials grid override */
+  .testimonials-grid { grid-template-columns: 1fr !important; }
+}
+
+@media (max-width: 480px) {
+  .section-title    { font-size: 1.4rem !important; }
+  .page-hero-title  { font-size: 1.7rem !important; }
+  .home-hero-title  { font-size: 1.7rem !important; }
+  .stats-inner      { padding: 24px 14px !important; }
+}

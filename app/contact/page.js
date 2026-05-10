@@ -27,7 +27,7 @@ export default function Contact() {
       </section>
 
       <section style={{ padding: '80px 24px', background: '#f8fafc' }}>
-        <div style={{ maxWidth: 1100, margin: '0 auto', display: 'grid', gridTemplateColumns: '1fr 1.4fr', gap: 60 }}>
+        <div className="contact-grid" style={{ maxWidth: 1100, margin: '0 auto' }}>
           <div>
             <h2 style={{ fontFamily: 'Poppins, sans-serif', fontSize: '1.8rem', fontWeight: 800, color: '#0f172a', marginBottom: 28 }}>Get in Touch</h2>
             {[

@@ -16,10 +16,10 @@ export default function Home() {
   return (
     <div>
       {/* HERO */}
-      <section className="hero-gradient" style={{ padding: '50px 50px', minHeight: 520, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-        <div style={{ maxWidth: 1200, width: '100%', display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 60, alignItems: 'center' }}>
+      <section className="hero-gradient hero-section" style={{ padding: '50px 50px', minHeight: 520, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+        <div className="hero-grid" style={{ maxWidth: 1200, width: '100%' }}>
           <div className="fade-in">
-            <h1 style={{ fontFamily: 'Poppins, sans-serif', fontSize: '3.2rem', fontWeight: 800, color: '#0f172a', lineHeight: 1.15, marginBottom: 24 }}>
+            <h1 className="home-hero-title" style={{ fontFamily: 'Poppins, sans-serif', fontSize: '3.2rem', fontWeight: 800, color: '#0f172a', lineHeight: 1.15, marginBottom: 24 }}>
               Connect With <span style={{ color: '#2563eb' }}>Academic</span> Experts
             </h1>
             <p style={{ color: '#64748b', fontSize: 17, lineHeight: 1.8, marginBottom: 36 }}>
@@ -39,7 +39,7 @@ export default function Home() {
               ))}
             </div>
           </div>
-          <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', marginLeft: 100, marginBottom: 30, marginRight: 40 }}>
+          <div className="hero-image-wrap" style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
             <Image
               src="/assets/PersonTeaching.png"
               alt="Academic Expert"
@@ -66,7 +66,7 @@ export default function Home() {
       {/* STATS */}
       <section style={{ padding: '72px 24px', background: 'white' }}>
         <div style={{ maxWidth: 1200, margin: '0 auto' }}>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: 40, background: 'linear-gradient(135deg,#f0f9ff,#ede9fe)', borderRadius: 24, padding: '48px 40px' }}>
+        <div className="four-col-grid stats-inner">
             {stats.map(s => <AnimatedCounter key={s.label} target={s.value} label={s.label} />)}
           </div>
         </div>
@@ -74,7 +74,7 @@ export default function Home() {
 
       {/* WHY CHOOSE US */}
       <section style={{ padding: '80px 24px', background: '#ffffff' }}>
-        <div style={{ maxWidth: 1200, margin: '0 auto', display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 60, alignItems: 'center' }}>
+        <div className="two-col-grid" style={{ maxWidth: 1200, margin: '0 auto' }}>
           <div style={{ display: 'flex', justifyContent: 'center' }}>
             <div style={{ position: 'relative', textAlign: 'center' }}>
               <div style={{ width: 300, height: 300, background: 'linear-gradient(135deg,#dbeafe,#ede9fe)', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 100, margin: '0 auto' }}>🏆</div>
@@ -110,7 +110,7 @@ export default function Home() {
       <section style={{ padding: '80px 24px', background: 'white' }}>
         <div style={{ maxWidth: 1200, margin: '0 auto' }}>
           <SectionHeader subtitle="Client Reviews" title="What Clients Say" desc="Thousands of students trust ZenEdify for their academic success." />
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 28 }}>
+          <div className="three-col-grid testimonials-grid">
             {testimonials.map(t => <TestimonialCard key={t.id} {...t} />)}
           </div>
         </div>

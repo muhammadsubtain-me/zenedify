@@ -38,7 +38,7 @@ export default function About() {
       </section>
 
       <section style={{ padding: '80px 24px' }}>
-        <div style={{ maxWidth: 1200, margin: '0 auto', display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 64, alignItems: 'center' }}>
+        <div className="two-col-grid" style={{ maxWidth: 1200, margin: '0 auto' }}>
           <div>
             <span style={{ color: '#2563eb', fontWeight: 700, fontSize: 13, textTransform: 'uppercase', letterSpacing: '1.5px' }}>Who We Are</span>
             <h2 className="section-title" style={{ margin: '12px 0 20px' }}>ZenEdify — Place Of Experts</h2>
@@ -63,7 +63,7 @@ export default function About() {
       <section style={{ padding: '80px 24px', background: '#f8fafc' }}>
         <div style={{ maxWidth: 1200, margin: '0 auto' }}>
           <SectionHeader subtitle="Our Principles" title="Our Core Values" desc="The foundation that guides everything we do at ZenEdify." />
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 28 }}>
+          <div className="three-col-grid">
             {values.map(v => (
               <Card key={v.title} className="card-hover">
                 <CardHeader>
@@ -82,7 +82,7 @@ export default function About() {
       <section style={{ padding: '80px 24px' }}>
         <div style={{ maxWidth: 1200, margin: '0 auto' }}>
           <SectionHeader subtitle="Our Experts" title="ZenEdify Experts" desc="Meet some of our world-class academic tutors ready to help you succeed." />
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: 28 }}>
+          <div className="four-col-grid">
             {team.map(t => (
               <Card key={t.name} className="card-hover text-center">
                 <CardHeader className="items-center">

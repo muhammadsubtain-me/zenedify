@@ -42,9 +42,9 @@ export default function MechanicalEngineering() {
       <section style={{ background: 'linear-gradient(135deg,#0f172a,#1e3a5f)', padding: '72px 24px', textAlign: 'center' }}>
         <div style={{ maxWidth: 700, margin: '0 auto' }}>
           <span style={{ color: '#60a5fa', fontWeight: 700, fontSize: 13, textTransform: 'uppercase', letterSpacing: '1.5px' }}>Engineering Courses</span>
-          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 16, margin: '16px 0 12px' }}>
+          <div className="discipline-hero-flex">
             <span style={{ fontSize: 48 }}>⚙️</span>
-            <h1 style={{ fontFamily: 'Poppins, sans-serif', fontSize: '3rem', fontWeight: 800, color: 'white', lineHeight: 1.2 }}>Mechanical Engineering</h1>
+            <h1 className="discipline-title">Mechanical Engineering</h1>
           </div>
           <p style={{ color: '#cbd5e1', fontSize: 17, lineHeight: 1.8 }}>Expert academic support across all Mechanical Engineering subjects — from assignments to final year projects.</p>
         </div>
