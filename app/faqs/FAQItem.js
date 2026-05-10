@@ -6,16 +6,16 @@ export default function FAQItem({ q, a }) {
   const [open, setOpen] = useState(false);
 
   return (
-    <div style={{ border: '1px solid #e2e8f0', borderRadius: 12, overflow: 'hidden', marginBottom: 12 }}>
+    <div className="border border-[#e2e8f0] rounded-xl overflow-hidden mb-3">
       <button
         onClick={() => setOpen(!open)}
-        style={{ width: '100%', textAlign: 'left', padding: '20px 24px', display: 'flex', justifyContent: 'space-between', alignItems: 'center', background: open ? '#eff6ff' : 'white', border: 'none', cursor: 'pointer', transition: 'background 0.2s' }}
+        className={`w-full text-left py-5 px-6 flex justify-between items-center border-none cursor-pointer transition-colors duration-200 ${open ? 'bg-[#eff6ff]' : 'bg-white'}`}
       >
-        <span style={{ fontWeight: 700, fontSize: 16, color: '#0f172a', paddingRight: 16 }}>{q}</span>
-        <span style={{ fontSize: 22, color: '#2563eb', flexShrink: 0, transform: open ? 'rotate(45deg)' : 'none', transition: 'transform 0.2s', display: 'inline-block' }}>+</span>
+        <span className="font-bold text-[16px] text-[#0f172a] pr-4">{q}</span>
+        <span className={`text-[22px] text-[#2563eb] flex-shrink-0 transition-transform duration-200 inline-block ${open ? 'rotate-45' : 'rotate-0'}`}>+</span>
       </button>
       {open && (
-        <div style={{ padding: '0 24px 20px', color: '#64748b', lineHeight: 1.85, fontSize: 15 }}>{a}</div>
+        <div className="px-6 pb-5 text-[#64748b] leading-[1.85] text-[15px]">{a}</div>
       )}
     </div>
   );

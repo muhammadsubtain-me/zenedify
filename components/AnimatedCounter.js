@@ -20,9 +20,9 @@ export default function AnimatedCounter({ target, label }) {
   }, [target]);
 
   return (
-    <div style={{ textAlign: 'center' }}>
+    <div className="text-center">
       <div className="counter-num">{count.toLocaleString()}+</div>
-      <div style={{ color: '#64748b', fontWeight: 600, fontSize: 15 }}>{label}</div>
+      <div className="text-[#64748b] font-semibold text-[15px]">{label}</div>
     </div>
   );
 }

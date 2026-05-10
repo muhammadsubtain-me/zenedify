@@ -17,29 +17,29 @@ const samples = [
 export default function Samples() {
   return (
     <div>
-      <section style={{ background: 'linear-gradient(135deg,#0f172a,#1e3a5f)', padding: '72px 24px', textAlign: 'center' }}>
-        <div style={{ maxWidth: 700, margin: '0 auto' }}>
-          <span style={{ color: '#60a5fa', fontWeight: 700, fontSize: 13, textTransform: 'uppercase', letterSpacing: '1.5px' }}>Sample Work</span>
-          <h1 style={{ fontFamily: 'Poppins, sans-serif', fontSize: '3rem', fontWeight: 800, color: 'white', margin: '16px 0 20px' }}>Homework Help Samples</h1>
-          <p style={{ color: '#cbd5e1', fontSize: 17, lineHeight: 1.8 }}>Browse our sample work to see the quality and standard our experts deliver.</p>
+      <section className="bg-gradient-to-br from-[#0f172a] to-[#1e3a5f] py-[72px] px-6 text-center">
+        <div className="max-w-[700px] mx-auto">
+          <span className="text-[#60a5fa] font-bold text-[13px] uppercase tracking-[1.5px]">Sample Work</span>
+          <h1 className="font-[Poppins,sans-serif] text-[3rem] font-extrabold text-white mt-4 mb-5">Homework Help Samples</h1>
+          <p className="text-[#cbd5e1] text-[17px] leading-[1.8]">Browse our sample work to see the quality and standard our experts deliver.</p>
         </div>
       </section>
 
-      <section style={{ padding: '80px 24px', background: '#f8fafc' }}>
-        <div style={{ maxWidth: 1200, margin: '0 auto' }}>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(270px, 1fr))', gap: 28 }}>
+      <section className="py-[80px] px-6 bg-[#f8fafc]">
+        <div className="max-w-[1200px] mx-auto">
+          <div className="grid grid-cols-[repeat(auto-fit,minmax(270px,1fr))] gap-7">
             {samples.map((s, i) => (
-              <div key={i} className="card-hover" style={{ background: 'white', borderRadius: 16, overflow: 'hidden', border: '1px solid #e2e8f0' }}>
-                <div style={{ background: 'linear-gradient(135deg,#dbeafe,#ede9fe)', height: 120, display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 56 }}>{s.emoji}</div>
-                <div style={{ padding: 24 }}>
-                  <div style={{ display: 'flex', gap: 8, marginBottom: 12, flexWrap: 'wrap' }}>
-                    <span style={{ background: '#dbeafe', color: '#2563eb', fontSize: 11, fontWeight: 700, padding: '3px 10px', borderRadius: 20 }}>{s.subject}</span>
-                    <span style={{ background: '#dcfce7', color: '#16a34a', fontSize: 11, fontWeight: 700, padding: '3px 10px', borderRadius: 20 }}>{s.level}</span>
+              <div key={i} className="card-hover bg-white rounded-2xl overflow-hidden border border-[#e2e8f0]">
+                <div className="bg-gradient-to-br from-[#dbeafe] to-[#ede9fe] h-[120px] flex items-center justify-center text-[56px]">{s.emoji}</div>
+                <div className="p-6">
+                  <div className="flex gap-2 mb-3 flex-wrap">
+                    <span className="bg-[#dbeafe] text-[#2563eb] text-[11px] font-bold py-[3px] px-2.5 rounded-full">{s.subject}</span>
+                    <span className="bg-[#dcfce7] text-[#16a34a] text-[11px] font-bold py-[3px] px-2.5 rounded-full">{s.level}</span>
                   </div>
-                  <h3 style={{ fontWeight: 700, fontSize: 16, color: '#0f172a', marginBottom: 12, lineHeight: 1.4 }}>{s.title}</h3>
-                  <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                    <span style={{ fontSize: 13, color: '#94a3b8' }}>📄 {s.pages} pages</span>
-                    <button style={{ background: '#2563eb', color: 'white', border: 'none', padding: '7px 16px', borderRadius: 8, fontWeight: 600, fontSize: 13, cursor: 'pointer' }}>View Sample</button>
+                  <h3 className="font-bold text-[16px] text-[#0f172a] mb-3 leading-[1.4]">{s.title}</h3>
+                  <div className="flex justify-between items-center">
+                    <span className="text-[13px] text-[#94a3b8]">📄 {s.pages} pages</span>
+                    <button className="bg-[#2563eb] text-white border-none py-[7px] px-4 rounded-lg font-semibold text-[13px] cursor-pointer">View Sample</button>
                   </div>
                 </div>
               </div>
