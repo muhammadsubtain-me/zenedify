@@ -1,0 +1,199 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --primary: #2563eb;
+  --primary-dark: #1d4ed8;
+  --secondary: #f59e0b;
+  --accent: #10b981;
+  --dark: #0f172a;
+  --gray: #64748b;
+  --light-bg: #f8fafc;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  color: #0f172a;
+  scroll-behavior: smooth;
+}
+
+.hero-gradient {
+  background: #ffffff;
+}
+
+/* ===== Keyframe Animations ===== */
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes shimmer {
+  0% { left: -100%; }
+  100% { left: 150%; }
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes floatUp {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-8px); }
+}
+
+@keyframes pulse-ring {
+  0% { box-shadow: 0 0 0 0 rgba(37,99,235,0.35); }
+  70% { box-shadow: 0 0 0 12px rgba(37,99,235,0); }
+  100% { box-shadow: 0 0 0 0 rgba(37,99,235,0); }
+}
+
+@keyframes spinGlow {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* ===== Blue Border Cards ===== */
+.card-hover {
+  position: relative;
+  transition: all 0.35s ease;
+  overflow: hidden;
+}
+
+.card-hover:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 40px rgba(37,99,235,0.18);
+  border-color: #2563eb !important;
+}
+
+/* ===== Buttons ===== */
+.btn-primary {
+  background: #2563eb;
+  color: white;
+  padding: 12px 28px;
+  border-radius: 8px;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  font-size: 15px;
+  cursor: pointer;
+  border: none;
+  transition: all 0.2s;
+  display: inline-block;
+  text-decoration: none;
+}
+.btn-primary:hover {
+  background: #1d4ed8;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(37,99,235,0.35);
+  animation: pulse-ring 1.5s infinite;
+}
+
+.btn-outline {
+  background: transparent;
+  color: #2563eb;
+  padding: 11px 28px;
+  border-radius: 8px;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  font-size: 15px;
+  cursor: pointer;
+  border: 2px solid #2563eb;
+  transition: all 0.2s;
+  display: inline-block;
+  text-decoration: none;
+}
+.btn-outline:hover {
+  background: #2563eb;
+  color: white;
+}
+
+/* ===== Section Title ===== */
+.section-title {
+  font-family: 'Poppins', sans-serif;
+  font-size: 2.2rem;
+  font-weight: 800;
+  color: #0f172a;
+  line-height: 1.2;
+}
+
+.counter-num {
+  font-family: 'Poppins', sans-serif;
+  font-size: 3rem;
+  font-weight: 800;
+  color: #2563eb;
+}
+
+/* ===== Fade In ===== */
+.fade-in {
+  animation: fadeInUp 0.6s ease forwards;
+}
+
+/* ===== Float Animation ===== */
+.float-animation {
+  animation: floatUp 3s ease-in-out infinite;
+}
+
+/* ===== Nav ===== */
+.nav-link {
+  color: #374151;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+  text-decoration: none;
+  padding: 6px 2px;
+  position: relative;
+  transition: color 0.2s;
+}
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 0;
+  width: 0; height: 2px;
+  background: #2563eb;
+  transition: width 0.25s ease;
+}
+.nav-link:hover { color: #2563eb; }
+.nav-link:hover::after { width: 100%; }
+
+/* ===== Service Icon ===== */
+.service-icon {
+  width: 56px; height: 56px;
+  border-radius: 14px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 26px;
+  margin-bottom: 14px;
+  transition: transform 0.3s ease;
+}
+.card-hover:hover .service-icon {
+  transform: scale(1.12) rotate(-4deg);
+}
+
+/* ===== Testimonial Card ===== */
+.testimonial-card {
+  position: relative;
+  background: white;
+  border-radius: 16px;
+  padding: 28px;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.07);
+  border: 1px solid #e2e8f0;
+  overflow: hidden;
+  transition: all 0.35s ease;
+}
+
+.testimonial-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 40px rgba(37,99,235,0.14);
+  border-color: #2563eb;
+}
+
+footer a { text-decoration: none; color: #94a3b8; transition: color 0.2s; }
+footer a:hover { color: #60a5fa; }
