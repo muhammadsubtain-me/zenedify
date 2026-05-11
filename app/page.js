@@ -17,10 +17,10 @@ export default function Home() {
     <div>
       {/* HERO */}
       <section className="bg-white">
-        <div className="max-w-[1200px] mx-auto px-4 sm:px-6 py-14 sm:py-20 grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
+        <div className="max-w-[1200px] mx-auto px-4 sm:px-6 py-14 sm:py-20 lg:py-[75px] grid grid-cols-1 lg:grid-cols-[1.2fr_0.8fr] gap-10 items-center">
           {/* Text */}
-          <div className="animate-fade-in order-2 lg:order-1">
-            <h1 className="text-[2rem] sm:text-[2.6rem] lg:text-[3.2rem] font-extrabold text-slate-900 leading-[1.15] mb-6">
+          <div className="animate-fade-in order-2 lg:order-1 ">
+            <h1 className="text-[2rem] sm:text-[2.6rem] lg:text-[2.8rem] font-extrabold text-slate-900 leading-[1.15] mb-6">
               Connect With <span className="text-blue-600">Academic</span> Experts
             </h1>
             <p className="text-slate-500 text-base sm:text-[17px] leading-[1.8] mb-8">
@@ -46,7 +46,7 @@ export default function Home() {
               alt="Academic Expert"
               width={380}
               height={380}
-              className="animate-float bg-white rounded-full p-4 object-contain drop-shadow-[0_20px_40px_rgba(37,99,235,0.15)] w-[220px] sm:w-[300px] lg:w-[380px]"
+              className="animate-float  p-4 object-contain drop-shadow-[0_20px_40px_rgba(37,99,235,0.15)] w-[220px] sm:w-[300px] lg:w-[380px]"
               priority
             />
           </div>
