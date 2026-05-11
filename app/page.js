@@ -40,13 +40,13 @@ export default function Home() {
           </div>
 
           {/* Image */}
-          <div className="animate-float flex justify-center items-center order-1 lg:order-2">
+          <div className="animate-float flex justify-center items-center order-2 lg:order-2 p-10">
             <Image
               src="/assets/PersonTeaching.png"
               alt="Academic Expert"
               width={380}
               height={380}
-              className="p-4 object-contain drop-shadow-[0_20px_40px_rgba(37,99,235,0.15)] w-[220px] sm:w-[300px] lg:w-[380px] lg:scale-[1.35] scale-[1.25]"
+              className="p-4 object-contain drop-shadow-[0_20px_40px_rgba(37,99,235,0.15)] w-[220px] sm:w-[300px] lg:w-[380px] lg:scale-[1.35] scale-[2]"
               priority
             />
           </div>
