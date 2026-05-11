@@ -88,14 +88,18 @@ export default function Navbar() {
             </Button>
           </SheetTrigger>
           <SheetContent side="right" className="w-[280px] sm:w-[320px]">
-            <SheetHeader>
-              <SheetTitle asChild>
-                <div className="flex flex-col items-start">
-                  <span className="font-extrabold text-xl text-slate-900">ZenEdify</span>
-                  <span className="text-[10px] text-blue-600 font-medium mt-0.5">Place of Experts</span>
-                </div>
-              </SheetTitle>
-            </SheetHeader>
+           <SheetHeader>
+  <SheetTitle asChild className="!line-clamp-none !whitespace-normal !h-auto">
+    <div className="flex flex-col items-start leading-tight">
+      <span className="font-extrabold text-xl text-slate-900">
+        ZenEdify
+      </span>
+      <span className="text-[10px] text-slate-600 font-medium mt-0.5">
+        Place of Experts
+      </span>
+    </div>
+  </SheetTitle>
+</SheetHeader>
             <div className="px-6 py-4 space-y-1">
               <SheetClose asChild>
                 <Link href="/" className="block py-2.5 text-gray-700 no-underline font-medium text-[15px] hover:text-blue-600 transition-colors">
