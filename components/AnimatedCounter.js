@@ -5,7 +5,7 @@ const AnimatedCounter = ({ target, label }) => {
   const [count, setCount] = useState(0);
 
   useEffect(() => {
-    const increment = target / 100; // adjust speed
+    const increment = target / 100;
     const timer = setInterval(() => {
       setCount(prev => {
         if (prev >= target) {
@@ -14,15 +14,14 @@ const AnimatedCounter = ({ target, label }) => {
         }
         return prev + increment;
       });
-    }, 20); // adjust interval
-
+    }, 20);
     return () => clearInterval(timer);
   }, [target]);
 
   return (
     <div className="text-center">
-      <div className="text-4xl font-bold text-blue-600">{Math.floor(count).toLocaleString()}</div>
-      <div className="text-gray-600 mt-2">{label}</div>
+      <div className="text-4xl sm:text-5xl font-extrabold text-blue-600">{Math.floor(count).toLocaleString()}</div>
+      <div className="text-gray-600 mt-2 text-sm sm:text-base">{label}</div>
     </div>
   );
 };

@@ -1,6 +1,5 @@
 import Link from 'next/link';
-import { Card, CardHeader, CardTitle, CardDescription, CardFooter } from '../../components/ui/card';
-import { Badge } from '../../components/ui/badge';
+import { Card, CardHeader, CardTitle, CardDescription } from '../../components/ui/card';
 import { Separator } from '../../components/ui/separator';
 import { Button } from '../../components/ui/button';
 
@@ -38,29 +37,39 @@ const taskTypes = [
 export default function ChemicalEngineering() {
   return (
     <div>
-      <section style={{ background: 'linear-gradient(135deg,#0f172a,#1e3a5f)', padding: '72px 24px', textAlign: 'center' }}>
-        <div style={{ maxWidth: 700, margin: '0 auto' }}>
-          <span style={{ color: '#60a5fa', fontWeight: 700, fontSize: 13, textTransform: 'uppercase', letterSpacing: '1.5px' }}>Engineering Courses</span>
-          <div className="discipline-hero-flex">
-            <span style={{ fontSize: 48 }}>🧪</span>
-            <h1 className="discipline-title">Chemical Engineering</h1>
+      <section className="bg-gradient-to-br from-slate-900 to-[#1e3a5f] py-16 sm:py-[72px] px-4 sm:px-6 text-center">
+        <div className="max-w-[700px] mx-auto">
+          <span className="text-blue-400 font-bold text-[13px] uppercase tracking-[1.5px]">Engineering Courses</span>
+          <div className="flex items-center justify-center gap-4 my-4 flex-wrap">
+            <span className="text-[40px] sm:text-[48px]">🧪</span>
+            <h1 className="font-extrabold text-white text-[1.8rem] sm:text-[3rem] leading-tight text-center">
+              Chemical Engineering
+            </h1>
           </div>
-          <p style={{ color: '#cbd5e1', fontSize: 17, lineHeight: 1.8 }}>Expert academic support across all Chemical Engineering subjects — from reaction kinetics to process simulation.</p>
+          <p className="text-slate-300 text-base sm:text-[17px] leading-[1.8]">
+            Expert academic support across all Chemical Engineering subjects — from reaction kinetics to process simulation.
+          </p>
         </div>
       </section>
 
-      <section style={{ padding: '80px 24px', background: '#f8fafc' }}>
-        <div style={{ maxWidth: 1200, margin: '0 auto' }}>
-          <div style={{ textAlign: 'center', marginBottom: 48 }}>
-            <span style={{ color: '#2563eb', fontWeight: 700, fontSize: 13, textTransform: 'uppercase', letterSpacing: '1.5px' }}>What We Cover</span>
-            <h2 style={{ fontFamily: 'Poppins, sans-serif', fontSize: '2.2rem', fontWeight: 800, color: '#0f172a', marginTop: 8, lineHeight: 1.2 }}>14 Subjects, One Expert Team</h2>
-            <p style={{ color: '#64748b', fontSize: 16, marginTop: 12, maxWidth: 560, margin: '12px auto 0' }}>Assignments, lab reports, semester projects, exam prep, and dissertations — we cover every deliverable.</p>
+      <section className="py-16 sm:py-20 px-4 sm:px-6 bg-slate-50">
+        <div className="max-w-[1200px] mx-auto">
+          <div className="text-center mb-12">
+            <span className="text-blue-600 font-bold text-[13px] uppercase tracking-[1.5px]">What We Cover</span>
+            <h2 className="font-extrabold text-slate-900 text-[1.9rem] sm:text-[2.2rem] mt-2 leading-tight">
+              14 Subjects, One Expert Team
+            </h2>
+            <p className="text-slate-500 text-base mt-3 max-w-[560px] mx-auto">
+              Assignments, lab reports, semester projects, exam prep, and dissertations — we cover every deliverable.
+            </p>
           </div>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: 24 }}>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {topics.map((t, i) => (
               <Card key={i} className="card-hover cursor-default">
                 <CardHeader>
-                  <div className="service-icon" style={{ background: '#fff7ed', color: '#ea580c' }}>{t.icon}</div>
+                  <div className="service-icon w-14 h-14 rounded-[14px] flex items-center justify-center text-[26px] mb-3.5 transition-transform duration-300 bg-orange-50 text-orange-600">
+                    {t.icon}
+                  </div>
                   <CardTitle>{t.title}</CardTitle>
                   <CardDescription>{t.desc}</CardDescription>
                 </CardHeader>
@@ -72,28 +81,32 @@ export default function ChemicalEngineering() {
 
       <Separator />
 
-      <section style={{ padding: '56px 24px', background: 'white' }}>
-        <div style={{ maxWidth: 1200, margin: '0 auto' }}>
-          <div style={{ textAlign: 'center', marginBottom: 36 }}>
-            <span style={{ color: '#2563eb', fontWeight: 700, fontSize: 13, textTransform: 'uppercase', letterSpacing: '1.5px' }}>Our Support</span>
-            <h2 style={{ fontFamily: 'Poppins, sans-serif', fontSize: '1.8rem', fontWeight: 800, color: '#0f172a', marginTop: 8 }}>Every Type of Task, Covered</h2>
+      <section className="py-12 sm:py-14 px-4 sm:px-6 bg-white">
+        <div className="max-w-[1200px] mx-auto">
+          <div className="text-center mb-9">
+            <span className="text-blue-600 font-bold text-[13px] uppercase tracking-[1.5px]">Our Support</span>
+            <h2 className="font-extrabold text-slate-900 text-[1.6rem] sm:text-[1.8rem] mt-2">Every Type of Task, Covered</h2>
           </div>
-          <div className="flex flex-wrap gap-3">
+          <div className="flex flex-wrap gap-3 justify-center sm:justify-start">
             {taskTypes.map(item => (
-              <div key={item.label} style={{ background: '#f0fdf4', borderRadius: 12, padding: '20px 16px', textAlign: 'center', border: '1px solid #bbf7d0' }}>
-                <div style={{ fontSize: 28, marginBottom: 10 }}>{item.icon}</div>
-                <div style={{ fontWeight: 600, fontSize: 14, color: '#14532d' }}>{item.label}</div>
+              <div key={item.label} className="bg-violet-100 rounded-xl px-5 py-5 text-center border border-violet-200 min-w-[140px]">
+                <div className="text-[28px] mb-2.5">{item.icon}</div>
+                <div className="font-semibold text-sm text-violet-900">{item.label}</div>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      <section style={{ padding: '72px 24px', background: 'linear-gradient(135deg,#2563eb,#1d4ed8)', textAlign: 'center' }}>
-        <div style={{ maxWidth: 600, margin: '0 auto' }}>
-          <h2 style={{ fontFamily: 'Poppins, sans-serif', fontSize: '2.2rem', fontWeight: 800, color: 'white', marginBottom: 16 }}>Ready to Get Started?</h2>
-          <p style={{ color: 'rgba(255,255,255,0.85)', fontSize: 16, marginBottom: 32, lineHeight: 1.7 }}>Connect with our Chemical Engineering experts and get the help you need today.</p>
-          <Button asChild size="lg" className="bg-amber-400 hover:bg-amber-500 text-[#0f172a] font-bold"><Link href="/contact">Get In Touch →</Link></Button>
+      <section className="py-16 sm:py-[72px] px-4 sm:px-6 bg-gradient-to-br from-blue-600 to-blue-800 text-center">
+        <div className="max-w-[600px] mx-auto">
+          <h2 className="font-extrabold text-white text-[1.7rem] sm:text-[2.2rem] mb-4">Ready to Get Started?</h2>
+          <p className="text-white/85 text-base mb-8 leading-[1.7]">
+            Connect with our Chemical Engineering experts and get the help you need today.
+          </p>
+          <Button asChild size="lg" className="bg-amber-400 hover:bg-amber-500 text-slate-900 font-bold">
+            <Link href="/contact">Get In Touch →</Link>
+          </Button>
         </div>
       </section>
     </div>

@@ -29,26 +29,38 @@ const values = [
 export default function About() {
   return (
     <div>
-      <section style={{ background: 'linear-gradient(135deg,#0f172a,#1e3a5f)', padding: '72px 24px', textAlign: 'center' }}>
-        <div style={{ maxWidth: 700, margin: '0 auto' }}>
-          <span style={{ color: '#60a5fa', fontWeight: 700, fontSize: 13, textTransform: 'uppercase', letterSpacing: '1.5px' }}>Our Story</span>
-          <h1 style={{ fontFamily: 'Poppins, sans-serif', fontSize: '3rem', fontWeight: 800, color: 'white', margin: '16px 0 20px' }}>About ZenEdify</h1>
-          <p style={{ color: '#cbd5e1', fontSize: 17, lineHeight: 1.8 }}>The place of academic experts — empowering students worldwide to achieve their full potential.</p>
+      {/* Hero */}
+      <section className="bg-gradient-to-br from-slate-900 to-[#1e3a5f] py-16 sm:py-[72px] px-4 sm:px-6 text-center">
+        <div className="max-w-[700px] mx-auto">
+          <span className="text-blue-400 font-bold text-[13px] uppercase tracking-[1.5px]">Our Story</span>
+          <h1 className="font-extrabold text-white text-[2rem] sm:text-[3rem] mt-4 mb-5 leading-tight">About ZenEdify</h1>
+          <p className="text-slate-300 text-base sm:text-[17px] leading-[1.8]">
+            The place of academic experts — empowering students worldwide to achieve their full potential.
+          </p>
         </div>
       </section>
 
-      <section style={{ padding: '80px 24px' }}>
-        <div className="two-col-grid" style={{ maxWidth: 1200, margin: '0 auto' }}>
+      {/* Who We Are */}
+      <section className="py-16 sm:py-20 px-4 sm:px-6">
+        <div className="max-w-[1200px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           <div>
-            <span style={{ color: '#2563eb', fontWeight: 700, fontSize: 13, textTransform: 'uppercase', letterSpacing: '1.5px' }}>Who We Are</span>
-            <h2 className="section-title" style={{ margin: '12px 0 20px' }}>ZenEdify — Place Of Experts</h2>
-            <p style={{ color: '#64748b', lineHeight: 1.85, marginBottom: 16, fontSize: 15 }}>Our world-class academic advisers enable professionals and students to succeed by offering top-quality academic solutions. Our experienced team members are skilled tutors who will use their expertise to produce a fantastic paper for you.</p>
-            <p style={{ color: '#64748b', lineHeight: 1.85, marginBottom: 16, fontSize: 15 }}>ZenEdify provides the best in coursework, dissertation, lab tasks, exam preparations, programming assignments and essays. As the leading academic assignment service, we make sure that all of your papers are well-written, distinctive, and professional.</p>
-            <p style={{ color: '#64748b', lineHeight: 1.85, fontSize: 15 }}>We have the resources and know-how to speed up your ascent up the success ladder.</p>
+            <span className="text-blue-600 font-bold text-[13px] uppercase tracking-[1.5px]">Who We Are</span>
+            <h2 className="font-extrabold text-slate-900 text-[1.9rem] sm:text-[2.2rem] leading-tight mt-3 mb-5">
+              ZenEdify — Place Of Experts
+            </h2>
+            <p className="text-slate-500 leading-[1.85] mb-4 text-[15px]">
+              Our world-class academic advisers enable professionals and students to succeed by offering top-quality academic solutions. Our experienced team members are skilled tutors who will use their expertise to produce a fantastic paper for you.
+            </p>
+            <p className="text-slate-500 leading-[1.85] mb-4 text-[15px]">
+              ZenEdify provides the best in coursework, dissertation, lab tasks, exam preparations, programming assignments and essays. As the leading academic assignment service, we make sure that all of your papers are well-written, distinctive, and professional.
+            </p>
+            <p className="text-slate-500 leading-[1.85] text-[15px]">
+              We have the resources and know-how to speed up your ascent up the success ladder.
+            </p>
           </div>
-          <Card style={{ background: 'linear-gradient(135deg,#dbeafe,#ede9fe)', border: 'none' }}>
-            <CardHeader className="text-center p-12">
-              <div style={{ fontSize: 80, marginBottom: 8 }}>🏛️</div>
+          <Card className="bg-gradient-to-br from-blue-100 to-violet-100 border-none">
+            <CardHeader className="text-center p-8 sm:p-12 items-center">
+              <div className="text-[70px] sm:text-[80px] mb-2">🏛️</div>
               <CardTitle className="text-2xl">Our Mission</CardTitle>
               <CardDescription className="text-base leading-relaxed">
                 To provide accessible, high-quality academic assistance that empowers every student to excel in their studies and achieve their academic goals.
@@ -60,14 +72,15 @@ export default function About() {
 
       <Separator />
 
-      <section style={{ padding: '80px 24px', background: '#f8fafc' }}>
-        <div style={{ maxWidth: 1200, margin: '0 auto' }}>
+      {/* Core Values */}
+      <section className="py-16 sm:py-20 px-4 sm:px-6 bg-slate-50">
+        <div className="max-w-[1200px] mx-auto">
           <SectionHeader subtitle="Our Principles" title="Our Core Values" desc="The foundation that guides everything we do at ZenEdify." />
-          <div className="three-col-grid">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-7">
             {values.map(v => (
               <Card key={v.title} className="card-hover">
                 <CardHeader>
-                  <div style={{ fontSize: 36, marginBottom: 8 }}>{v.icon}</div>
+                  <div className="text-[36px] mb-2">{v.icon}</div>
                   <CardTitle className="text-lg">{v.title}</CardTitle>
                   <CardDescription>{v.desc}</CardDescription>
                 </CardHeader>
@@ -79,14 +92,15 @@ export default function About() {
 
       <Separator />
 
-      <section style={{ padding: '80px 24px' }}>
-        <div style={{ maxWidth: 1200, margin: '0 auto' }}>
+      {/* Team */}
+      <section className="py-16 sm:py-20 px-4 sm:px-6">
+        <div className="max-w-[1200px] mx-auto">
           <SectionHeader subtitle="Our Experts" title="ZenEdify Experts" desc="Meet some of our world-class academic tutors ready to help you succeed." />
-          <div className="four-col-grid">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-7">
             {team.map(t => (
               <Card key={t.name} className="card-hover text-center">
                 <CardHeader className="items-center">
-                  <div style={{ fontSize: 56, marginBottom: 8 }}>{t.emoji}</div>
+                  <div className="text-[56px] mb-2">{t.emoji}</div>
                   <CardTitle className="text-sm">{t.name}</CardTitle>
                   <Badge variant="secondary" className="text-xs">{t.role}</Badge>
                   <CardDescription className="text-xs">{t.expertise}</CardDescription>
@@ -97,10 +111,15 @@ export default function About() {
         </div>
       </section>
 
-      <section style={{ padding: '80px 24px', background: 'linear-gradient(135deg,#0f172a,#1e3a5f,#2563eb)', textAlign: 'center' }}>
-        <div style={{ maxWidth: 600, margin: '0 auto' }}>
-          <h2 style={{ fontFamily: 'Poppins, sans-serif', fontSize: '2.2rem', fontWeight: 800, color: 'white', marginBottom: 16 }}>Join Thousands of Happy Students</h2>
-          <p style={{ color: 'rgba(255,255,255,0.8)', fontSize: 16, marginBottom: 32, lineHeight: 1.7 }}>Get the academic help you deserve from qualified experts.</p>
+      {/* CTA */}
+      <section className="py-16 sm:py-20 px-4 sm:px-6 bg-gradient-to-br from-slate-900 via-[#1e3a5f] to-blue-600 text-center">
+        <div className="max-w-[600px] mx-auto">
+          <h2 className="font-extrabold text-white text-[1.7rem] sm:text-[2.2rem] mb-4">
+            Join Thousands of Happy Students
+          </h2>
+          <p className="text-white/80 text-base mb-8 leading-[1.7]">
+            Get the academic help you deserve from qualified experts.
+          </p>
           <Button asChild size="lg">
             <Link href="/contact">Get In Touch →</Link>
           </Button>

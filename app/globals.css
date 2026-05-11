@@ -23,257 +23,88 @@
     --radius: 0.75rem;
   }
 
-  * {
+  *, *::before, *::after {
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
     border-color: hsl(var(--border));
+  }
+
+  html, body {
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
   }
 
   body {
     font-family: 'Poppins', sans-serif;
-    color: #0f172a;
-    scroll-behavior: smooth;
-    background-color: hsl(var(--background));
     color: hsl(var(--foreground));
-    overflow-x: hidden;
+    background-color: hsl(var(--background));
+    scroll-behavior: smooth;
   }
-html, body{
-  width: 100%;
-  height: 100%;
-  margin: 0px;
-  padding: 0px;
-  overflow-x: hidden;;
-}
-  img { max-width: 100%; height: auto; }
+
+  img {
+    max-width: 100%;
+    height: auto;
+  }
 }
 
-.hero-gradient {
-  background: #ffffff;
-}
+/* Nav underline hover effect — not expressible in Tailwind utilities */
+@layer components {
+  .nav-link-underline {
+    position: relative;
+    padding-bottom: 2px;
+  }
+  .nav-link-underline::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: #2563eb;
+    transition: width 0.25s ease;
+  }
+  .nav-link-underline:hover::after {
+    width: 100%;
+  }
 
-/* ===== Keyframe Animations ===== */
-@keyframes fadeInUp {
-  from { opacity: 0; transform: translateY(30px); }
-  to { opacity: 1; transform: translateY(0); }
-}
+  /* Services dropdown hover (pure CSS, no JS) */
+  .services-dropdown-menu {
+    opacity: 0;
+    pointer-events: none;
+    transform: translateX(-50%) translateY(-6px);
+    transition: opacity 0.18s ease, transform 0.18s ease;
+  }
+  .services-dropdown-wrapper:hover .services-dropdown-menu {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateX(-50%) translateY(0);
+  }
+  .services-dropdown-item:hover {
+    background: #f0f7ff;
+    color: #2563eb !important;
+  }
 
-@keyframes floatUp {
-  0%, 100% { transform: translateY(0px); }
-  50% { transform: translateY(-8px); }
-}
+  /* Card hover lift */
+  .card-hover {
+    position: relative;
+    transition: all 0.35s ease;
+    overflow: hidden;
+  }
+  .card-hover:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 20px 40px rgba(37,99,235,0.18);
+    border-color: #2563eb !important;
+  }
+  .card-hover:hover .service-icon {
+    transform: scale(1.12) rotate(-4deg);
+  }
 
-@keyframes pulse-ring {
-  0% { box-shadow: 0 0 0 0 rgba(37,99,235,0.35); }
-  70% { box-shadow: 0 0 0 12px rgba(37,99,235,0); }
-  100% { box-shadow: 0 0 0 0 rgba(37,99,235,0); }
-}
-
-/* ===== Blue Border Cards ===== */
-.card-hover {
-  position: relative;
-  transition: all 0.35s ease;
-  overflow: hidden;
-}
-
-.card-hover:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 20px 40px rgba(37,99,235,0.18);
-  border-color: #2563eb !important;
-}
-
-/* ===== Buttons ===== */
-.btn-primary {
-  background: #2563eb;
-  color: white;
-  padding: 12px 28px;
-  border-radius: 8px;
-  font-family: 'Poppins', sans-serif;
-  font-weight: 600;
-  font-size: 15px;
-  cursor: pointer;
-  border: none;
-  transition: all 0.2s;
-  display: inline-block;
-  text-decoration: none;
-}
-.btn-primary:hover {
-  background: #1d4ed8;
-  transform: translateY(-2px);
-  box-shadow: 0 8px 20px rgba(37,99,235,0.35);
-}
-
-.btn-outline {
-  background: transparent;
-  color: #2563eb;
-  padding: 11px 28px;
-  border-radius: 8px;
-  font-family: 'Poppins', sans-serif;
-  font-weight: 600;
-  font-size: 15px;
-  cursor: pointer;
-  border: 2px solid #2563eb;
-  transition: all 0.2s;
-  display: inline-block;
-  text-decoration: none;
-}
-.btn-outline:hover {
-  background: #2563eb;
-  color: white;
-}
-
-/* ===== Section Title ===== */
-.section-title {
-  font-family: 'Poppins', sans-serif;
-  font-size: 2.2rem;
-  font-weight: 800;
-  color: #0f172a;
-  line-height: 1.2;
-}
-
-.counter-num {
-  font-family: 'Poppins', sans-serif;
-  font-size: 3rem;
-  font-weight: 800;
-  color: #2563eb;
-}
-
-/* ===== Fade In ===== */
-.fade-in {
-  animation: fadeInUp 0.6s ease forwards;
-}
-
-/* ===== Float Animation ===== */
-.float-animation {
-  animation: floatUp 3s ease-in-out infinite;
-}
-
-/* ===== Nav ===== */
-.nav-link {
-  color: #374151;
-  font-family: 'Poppins', sans-serif;
-  font-weight: 500;
-  font-size: 14px;
-  text-decoration: none;
-  padding: 6px 2px;
-  position: relative;
-  transition: color 0.2s;
-}
-.nav-link::after {
-  content: '';
-  position: absolute;
-  bottom: 0; left: 0;
-  width: 0; height: 2px;
-  background: #2563eb;
-  transition: width 0.25s ease;
-}
-.nav-link:hover { color: #2563eb; }
-.nav-link:hover::after { width: 100%; }
-
-/* ===== Service Icon ===== */
-.service-icon {
-  width: 56px; height: 56px;
-  border-radius: 14px;
-  display: flex; align-items: center; justify-content: center;
-  font-size: 26px;
-  margin-bottom: 14px;
-  transition: transform 0.3s ease;
-}
-.card-hover:hover .service-icon {
-  transform: scale(1.12) rotate(-4deg);
-}
-
-/* ===== Testimonial Card ===== */
-.testimonial-card {
-  position: relative;
-  background: white;
-  border-radius: 16px;
-  padding: 28px;
-  box-shadow: 0 4px 24px rgba(0,0,0,0.07);
-  border: 1px solid #e2e8f0;
-  overflow: hidden;
-  transition: all 0.35s ease;
-}
-
-.testimonial-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 16px 40px rgba(37,99,235,0.14);
-  border-color: #2563eb;
-}
-
-footer a { text-decoration: none; color: #94a3b8; transition: color 0.2s; }
-footer a:hover { color: #60a5fa; }
-
-/* ===== Engineering Page Hero Title ===== */
-.discipline-title {
-  font-family: 'Poppins, sans-serif';
-  font-size: 3rem;
-  font-weight: 800;
-  color: white;
-  line-height: 1.2;
-}
-.discipline-hero-flex {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 16px;
-  margin: 16px 0 12px;
-  flex-wrap: wrap;
-}
-
-@media (max-width: 768px) {
-  .discipline-title { font-size: 1.8rem !important; }
-  .discipline-hero-flex .discipline-title { text-align: center; }
-}
-.hero-grid          { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
-.two-col-grid       { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center; }
-.three-col-grid     { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; }
-.four-col-grid      { display: grid; grid-template-columns: repeat(4, 1fr); gap: 40px; }
-.stats-inner        { background: linear-gradient(135deg,#f0f9ff,#ede9fe); border-radius: 24px; padding: 48px 40px; }
-.contact-grid       { display: grid; grid-template-columns: 1fr 1.4fr; gap: 60px; }
-.footer-grid        { display: grid; grid-template-columns: 1.4fr 1fr 1.8fr; gap: 48px; padding-bottom: 40px; }
-
-.page-hero-title    { font-family: 'Poppins, sans-serif'; font-size: 3rem; font-weight: 800; color: white; margin: 16px 0 20px; }
-.home-hero-title    { font-family: 'Poppins, sans-serif'; font-size: 3.2rem; font-weight: 800; color: #0f172a; line-height: 1.15; margin-bottom: 24px; }
-.hero-image-wrap    { display: flex; justify-content: center; align-items: center; margin-left: 100px; margin-bottom: 30px; margin-right: 40px; }
-
-@media (max-width: 768px) {
-  /* Typography */
-  .section-title    { font-size: 1.6rem !important; }
-  .counter-num      { font-size: 2rem !important; }
-  .page-hero-title  { font-size: 2rem !important; }
-  .home-hero-title  { font-size: 2rem !important; }
-
-  /* Grids → single column */
-  .hero-grid,
-  .two-col-grid,
-  .three-col-grid,
-  .four-col-grid,
-  .contact-grid,
-  .footer-grid      { grid-template-columns: 1fr !important; gap: 32px !important; }
-
-  /* Stats inner box */
-  .stats-inner      { padding: 32px 20px !important; }
-
-  /* Hero image: remove the large left-margin offset */
-  .hero-image-wrap  { margin: 0 !important; }
-
-  /* Hero section padding */
-  .hero-section     { padding: 40px 20px !important; }
-
-  /* Generic section padding reduction */
-  section           { padding-left: 16px !important; padding-right: 16px !important; }
-
-  /* Page hero h1 */
-  h1[style*="3rem"] { font-size: 2rem !important; }
-
-  /* Testimonials grid override */
-  .testimonials-grid { grid-template-columns: 1fr !important; }
-}
-
-@media (max-width: 480px) {
-  .section-title    { font-size: 1.4rem !important; }
-  .page-hero-title  { font-size: 1.7rem !important; }
-  .home-hero-title  { font-size: 1.7rem !important; }
-  .stats-inner      { padding: 24px 14px !important; }
+  /* Testimonial card hover */
+  .testimonial-card-hover:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 16px 40px rgba(37,99,235,0.14);
+    border-color: #2563eb !important;
+  }
 }

@@ -28,43 +28,41 @@ export default function Navbar() {
   const isActive = (href) => pathname === href;
 
   return (
-    <header style={{ boxShadow: '0 2px 16px rgba(0,0,0,0.07)', background: 'white', position: 'sticky', top: 0, zIndex: 200 }}>
-      <div style={{ maxWidth: 1200, margin: '0 auto', padding: '0 24px', display: 'flex', alignItems: 'center', justifyContent: 'space-between', height: 70 }}>
+    <header className="shadow-[0_2px_16px_rgba(0,0,0,0.07)] bg-white sticky top-0 z-[200]">
+      <div className="max-w-[1200px] mx-auto px-4 sm:px-6 flex items-center justify-between h-[70px]">
 
         {/* Brand */}
-        <Link href="/" style={{ textDecoration: 'none', display: 'flex', alignItems: 'center', gap: 10 }}>
+        <Link href="/" className="no-underline flex items-center gap-2.5">
           <div>
-            <div style={{ fontWeight: 800, fontSize: 22, color: '#0f172a', lineHeight: 1 }}>ZenEdify</div>
-            <div style={{ fontSize: 10, color: '#2563eb', fontWeight: 500, marginLeft: 6, marginTop: 1 }}>Place of Experts</div>
+            <div className="font-extrabold text-[22px] text-slate-900 leading-none">ZenEdify</div>
+            <div className="text-[10px] text-blue-600 font-medium ml-1.5 mt-0.5">Place of Experts</div>
           </div>
         </Link>
 
         {/* Desktop Nav */}
-        <nav style={{ display: 'flex', gap: 24, alignItems: 'center' }} className="desktop-nav">
-          <Link href="/" className="nav-link" style={{ color: isActive('/') ? '#2563eb' : '#374151', fontWeight: isActive('/') ? 600 : 500, fontSize: 13.5, textDecoration: 'none' }}>
+        <nav className="hidden lg:flex gap-6 items-center">
+          <Link
+            href="/"
+            className={`nav-link-underline text-[13.5px] no-underline transition-colors ${isActive('/') ? 'text-blue-600 font-semibold' : 'text-gray-700 font-medium hover:text-blue-600'}`}
+          >
             Home
           </Link>
 
-          {/* Services dropdown — pure CSS hover, works immediately on first load */}
-          <div
-            className="services-dropdown-wrapper"
-            style={{ position: 'relative', display: 'flex', alignItems: 'center', alignSelf: 'stretch' }}
-          >
-            <span className="nav-link services-label" style={{ color: '#374151', fontWeight: 500, fontSize: 13.5, cursor: 'default', userSelect: 'none' }}>
+          {/* Services dropdown — pure CSS hover */}
+          <div className="services-dropdown-wrapper relative flex items-center self-stretch cursor-default">
+            <span className="nav-link-underline text-gray-700 font-medium text-[13.5px] select-none">
               Services
             </span>
-            <div className="services-dropdown-menu" style={{
-              position: 'absolute', top: '100%', left: '50%',
-              background: 'white', borderRadius: 8, boxShadow: '0 8px 32px rgba(0,0,0,0.12)',
-              border: '1px solid #e2e8f0', padding: '8px 0', minWidth: 240, zIndex: 300,
-            }}>
-              <div style={{ padding: '6px 16px 4px', fontSize: 11, fontWeight: 700, color: '#94a3b8', textTransform: 'uppercase', letterSpacing: '1px' }}>
+            <div className="services-dropdown-menu absolute top-full left-1/2 bg-white rounded-lg shadow-[0_8px_32px_rgba(0,0,0,0.12)] border border-slate-200 py-2 min-w-[240px] z-[300]">
+              <div className="px-4 py-1.5 text-[11px] font-bold text-slate-400 uppercase tracking-widest">
                 Disciplines
               </div>
               {engineeringLinks.map(l => (
-                <Link key={l.to} href={l.to}
-                  className="services-dropdown-item"
-                  style={{ display: 'block', padding: '10px 16px', fontSize: 13.5, color: '#374151', textDecoration: 'none', fontWeight: 500 }}>
+                <Link
+                  key={l.to}
+                  href={l.to}
+                  className="services-dropdown-item block px-4 py-2.5 text-[13.5px] text-gray-700 no-underline font-medium transition-colors"
+                >
                   {l.label}
                 </Link>
               ))}
@@ -72,8 +70,11 @@ export default function Navbar() {
           </div>
 
           {links.map(l => (
-            <Link key={l.to} href={l.to} className="nav-link"
-              style={{ color: isActive(l.to) ? '#2563eb' : '#374151', fontWeight: isActive(l.to) ? 600 : 500, fontSize: 13.5, textDecoration: 'none' }}>
+            <Link
+              key={l.to}
+              href={l.to}
+              className={`nav-link-underline text-[13.5px] no-underline transition-colors ${isActive(l.to) ? 'text-blue-600 font-semibold' : 'text-gray-700 font-medium hover:text-blue-600'}`}
+            >
               {l.label}
             </Link>
           ))}
@@ -82,34 +83,37 @@ export default function Navbar() {
         {/* Mobile — Sheet */}
         <Sheet>
           <SheetTrigger asChild>
-            <Button variant="ghost" size="icon" className="mobile-menu-btn" style={{ display: 'none' }}>
+            <Button variant="ghost" size="icon" className="lg:hidden">
               <Menu className="h-6 w-6" />
             </Button>
           </SheetTrigger>
-          <SheetContent side="right">
+          <SheetContent side="right" className="w-[280px] sm:w-[320px]">
             <SheetHeader>
               <SheetTitle>
-                <span style={{ fontWeight: 800, fontSize: 20, color: '#0f172a' }}>ZenEdify</span>
-                <span style={{ fontSize: 10, color: '#2563eb', fontWeight: 500, display: 'block' }}>Place of Experts</span>
+                <span className="font-extrabold text-xl text-slate-900">ZenEdify</span>
+                <span className="text-[10px] text-blue-600 font-medium block mt-0.5">Place of Experts</span>
               </SheetTitle>
             </SheetHeader>
-            <div style={{ padding: '16px 24px' }}>
+            <div className="px-1 py-4 space-y-1">
               <SheetClose asChild>
-                <Link href="/" style={{ display: 'block', padding: '10px 0', color: '#374151', textDecoration: 'none', fontWeight: 500, fontSize: 15 }}>Home</Link>
+                <Link href="/" className="block py-2.5 text-gray-700 no-underline font-medium text-[15px] hover:text-blue-600 transition-colors">
+                  Home
+                </Link>
               </SheetClose>
-              <div style={{ padding: '10px 0' }}>
-                <div style={{ fontSize: 15, fontWeight: 600, color: '#374151', marginBottom: 8 }}>Services</div>
+              <div className="py-2">
+                <div className="text-[15px] font-semibold text-gray-700 mb-2">Services</div>
                 {engineeringLinks.map(l => (
                   <SheetClose asChild key={l.to}>
-                    <Link href={l.to} style={{ display: 'block', padding: '7px 12px', color: '#64748b', textDecoration: 'none', fontWeight: 500, fontSize: 14 }}>
+                    <Link href={l.to} className="block py-1.5 px-3 text-slate-500 no-underline font-medium text-sm hover:text-blue-600 transition-colors">
                       {l.label}
                     </Link>
                   </SheetClose>
                 ))}
               </div>
+              <Separator />
               {links.map(l => (
                 <SheetClose asChild key={l.to}>
-                  <Link href={l.to} style={{ display: 'block', padding: '10px 0', color: '#374151', textDecoration: 'none', fontWeight: 500, fontSize: 15 }}>
+                  <Link href={l.to} className="block py-2.5 text-gray-700 no-underline font-medium text-[15px] hover:text-blue-600 transition-colors">
                     {l.label}
                   </Link>
                 </SheetClose>
@@ -118,38 +122,6 @@ export default function Navbar() {
           </SheetContent>
         </Sheet>
       </div>
-
-      <style>{`
-        @media (max-width: 900px) {
-          .desktop-nav { display: none !important; }
-          .mobile-menu-btn { display: flex !important; }
-        }
-
-        /* ── Services dropdown: pure CSS, works instantly on first load ── */
-        .services-dropdown-wrapper { cursor: default; }
-
-        .services-dropdown-menu {
-          opacity: 0;
-          pointer-events: none;
-          transform: translateX(-50%) translateY(-6px);
-          transition: opacity 0.18s ease, transform 0.18s ease;
-        }
-
-        .services-dropdown-wrapper:hover .services-dropdown-menu {
-          opacity: 1;
-          pointer-events: auto;
-          transform: translateX(-50%) translateY(0);
-        }
-
-        .services-dropdown-item:hover {
-          background: #f0f7ff;
-          color: #2563eb !important;
-        }
-
-        .services-label:hover {
-          color: #2563eb !important;
-        }
-      `}</style>
     </header>
   );
 }
