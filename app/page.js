@@ -40,7 +40,7 @@ export default function Home() {
           </div>
 
           {/* Image */}
-          <div className="animate-float flex justify-center items-center order-2 lg:order-2 p-10">
+          <div className="animate-float flex justify-center items-center order-2 lg:order-2 p-10 pr-[55px]">
             <Image
               src="/assets/PersonTeaching.png"
               alt="Academic Expert"
