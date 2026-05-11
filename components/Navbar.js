@@ -34,8 +34,8 @@ export default function Navbar() {
         {/* Brand */}
         <Link href="/" className="no-underline flex items-center gap-2.5">
           <div>
-            <div className="font-extrabold text-[22px] text-slate-900 leading-none">ZenEdify</div>
-            <div className="text-[10px] text-blue-600 font-medium ml-1.5 mt-0.5">Place of Experts</div>
+            <div className="font-extrabold text-[22px] text-slate-900 leading-none">Zen<span className="text-blue-600">Edify</span></div>
+            <div className="text-[10px] text-slate-600 font-medium ml-1.5 mt-0.5">Place of Experts</div>
           </div>
         </Link>
 

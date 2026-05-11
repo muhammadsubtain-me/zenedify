@@ -17,7 +17,7 @@ export default function Home() {
     <div>
       {/* HERO */}
       <section className="bg-white">
-        <div className="max-w-[1200px] mx-auto px-4 sm:px-6 py-14 sm:py-20 lg:py-[75px] grid grid-cols-1 lg:grid-cols-[1.2fr_0.8fr] gap-10 items-center">
+        <div className="max-w-[1200px] mx-auto px-4 sm:px-6 py-14 sm:py-20 lg:py-[60px] grid grid-cols-1 lg:grid-cols-[1.2fr_0.8fr] gap-10 items-center">
           {/* Text */}
           <div className="animate-fade-in order-2 lg:order-1 ">
             <h1 className="text-[2rem] sm:text-[2.6rem] lg:text-[2.8rem] font-extrabold text-slate-900 leading-[1.15] mb-6">
@@ -40,13 +40,13 @@ export default function Home() {
           </div>
 
           {/* Image */}
-          <div className="flex justify-center items-center order-1 lg:order-2">
+          <div className="animate-float flex justify-center items-center order-1 lg:order-2">
             <Image
               src="/assets/PersonTeaching.png"
               alt="Academic Expert"
               width={380}
               height={380}
-              className="animate-float  p-4 object-contain drop-shadow-[0_20px_40px_rgba(37,99,235,0.15)] w-[220px] sm:w-[300px] lg:w-[380px]"
+              className="p-4 object-contain drop-shadow-[0_20px_40px_rgba(37,99,235,0.15)] w-[220px] sm:w-[300px] lg:w-[380px] lg:scale-[1.35] scale-[1.25]"
               priority
             />
           </div>
