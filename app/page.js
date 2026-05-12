@@ -17,9 +17,9 @@ export default function Home() {
     <div>
       {/* HERO */}
       <section className="bg-white">
-        <div className="max-w-[1200px] mx-auto px-4 sm:px-6 py-14 sm:py-20 lg:py-[60px] grid grid-cols-1 lg:grid-cols-[1.2fr_0.8fr] gap-10 items-center">
+        <div className="max-w-[1200px] mx-auto px-4 sm:px-6 py-14 sm:py-20 lg:py-[60px] grid grid-cols-1 lg:grid-cols-[1.2fr_0.8fr] gap-10 items-center min-w-0">
           {/* Text */}
-          <div className="animate-fade-in order-2 lg:order-1 ">
+          <div className="animate-fade-in order-2 lg:order-1 min-w-0">
             <h1 className="text-[2rem] sm:text-[2.6rem] lg:text-[2.8rem] font-extrabold text-slate-900 leading-[1.15] mb-6">
               Connect With <span className="text-blue-600">Academic</span> Experts
             </h1>
@@ -40,13 +40,13 @@ export default function Home() {
           </div>
 
           {/* Image */}
-          <div className="animate-float flex justify-center items-center order-2 lg:order-2 p-10 pr-[55px]">
+          <div className="animate-float flex justify-center items-center order-2 lg:order-2 px-2 py-8 sm:p-10 sm:pr-[55px] min-w-0 max-w-full overflow-x-clip">
             <Image
               src="/assets/PersonTeaching.png"
               alt="Academic Expert"
               width={380}
               height={380}
-              className="p-4 object-contain drop-shadow-[0_20px_40px_rgba(37,99,235,0.15)] w-[220px] sm:w-[300px] lg:w-[380px] lg:scale-[1.35] scale-[2]"
+              className="p-4 object-contain drop-shadow-[0_20px_40px_rgba(37,99,235,0.15)] w-[min(100%,260px)] sm:w-[300px] lg:w-[380px] lg:scale-[1.35] h-auto"
               priority
             />
           </div>
