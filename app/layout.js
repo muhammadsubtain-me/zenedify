@@ -2,6 +2,8 @@ import { Poppins } from 'next/font/google';
 import './globals.css';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
+import WhatsAppButton from '../components/WhatsAppButton';
+import ScrollToTopButton from '../components/ScrollToTopButton';
 
 const poppins = Poppins({
   subsets: ['latin'],
@@ -45,6 +47,8 @@ export default function RootLayout({ children }) {
         <Navbar />
         <main className="flex-1">{children}</main>
         <Footer />
+        <ScrollToTopButton />
+        <WhatsAppButton />
       </body>
     </html>
   );

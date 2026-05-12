@@ -3,6 +3,9 @@ const nextConfig = {
   // Enable React strict mode for catching potential issues
   reactStrictMode: true,
 
+  // Hide the default bottom-left dev route indicator (replaced by site UI)
+  devIndicators: false,
+
   // Image optimization — allow the default public folder
   images: {
     domains: [],

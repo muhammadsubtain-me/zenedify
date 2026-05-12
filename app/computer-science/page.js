@@ -40,7 +40,7 @@ export default function ComputerScience() {
     <div>
       <section className="bg-gradient-to-br from-slate-900 to-[#1e3a5f] py-16 sm:py-[72px] px-4 sm:px-6 text-center">
         <div className="max-w-[700px] mx-auto">
-          <span className="text-blue-400 font-bold text-[13px] uppercase tracking-[1.5px]">Engineering Courses</span>
+          <span className="text-blue-400 font-bold text-[13px] uppercase tracking-[1.5px]">Academic Discipline</span>
           <div className="flex items-center justify-center gap-4 my-4 flex-wrap">
             <span className="text-[40px] sm:text-[48px]">💻</span>
             <h1 className="font-extrabold text-white text-[1.8rem] sm:text-[3rem] leading-tight text-center">
