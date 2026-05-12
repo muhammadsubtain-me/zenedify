@@ -40,13 +40,13 @@ export default function Home() {
           </div>
 
           {/* Image */}
-          <div className="animate-float flex justify-center items-center order-2 lg:order-2 px-2 py-8 sm:p-10 sm:pr-[55px] min-w-0 max-w-full overflow-x-clip">
+          <div className="animate-float flex justify-center items-center order-2 lg:order-2 px-2 py-8 sm:p-10 sm:pr-[55px] min-w-0 max-w-full overflow-x-clip pr-5">
             <Image
               src="/assets/PersonTeaching.png"
               alt="Academic Expert"
               width={380}
               height={380}
-              className="p-4 object-contain drop-shadow-[0_20px_40px_rgba(37,99,235,0.15)] w-[min(100%,260px)] sm:w-[300px] lg:w-[380px] lg:scale-[1.35] h-auto"
+              className="p-4 object-contain drop-shadow-[0_20px_40px_rgba(37,99,235,0.15)] w-[min(100%,260px)] sm:w-[300px] lg:w-[380px] lg:scale-[1.35] scale-[1.5] h-auto"
               priority
             />
           </div>
@@ -76,9 +76,16 @@ export default function Home() {
       <section className="py-16 sm:py-20 px-4 sm:px-6 bg-white">
         <div className="max-w-[1200px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           <div className="flex justify-center items-center">
-            <div className="w-[200px] h-[200px] sm:w-[280px] sm:h-[280px] lg:w-[300px] lg:h-[300px] bg-gradient-to-br from-blue-100 to-violet-100 rounded-full flex items-center justify-center text-[70px] sm:text-[100px]">
-              🏆
-            </div>
+          <div className="animate-float flex justify-center items-center order-2 lg:order-2 px-2 py-8 sm:p-10 sm:pr-[55px] min-w-0 max-w-full overflow-x-clip">
+            <Image
+              src="/assets/AboutUs.png"
+              alt="About Us"
+              width={380}
+              height={380}
+              className="p-4 object-contain drop-shadow-[0_20px_40px_rgba(37,99,235,0.15)] w-[min(100%,260px)] sm:w-[300px] lg:w-[380px] lg:scale-[1.35] scale-[1.5] h-auto"
+              priority
+            />
+          </div>
           </div>
           <div>
             <span className="text-blue-600 font-bold text-[13px] uppercase tracking-[1.5px]">Why Choose Us</span>
