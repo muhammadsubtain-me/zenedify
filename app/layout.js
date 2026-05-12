@@ -42,11 +42,13 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className={`h-full max-w-full overflow-x-hidden ${poppins.variable}`}>
-      <body className="flex flex-col min-h-full w-full max-w-full font-sans overflow-x-hidden bg-background text-foreground antialiased scroll-smooth">
+    <html lang="en" className={`h-full max-w-full ${poppins.variable}`}>
+      <body className="flex min-h-full w-full max-w-full flex-col font-sans bg-background text-foreground antialiased scroll-smooth">
         <Navbar />
-        <main className="flex-1 min-w-0 w-full">{children}</main>
-        <Footer />
+        <div className="flex min-h-0 min-w-0 flex-1 flex-col overflow-x-clip">
+          <main className="min-w-0 w-full flex-1">{children}</main>
+          <Footer />
+        </div>
         <ScrollToTopButton />
         <WhatsAppButton />
       </body>

@@ -31,7 +31,7 @@ export default function Navbar() {
   const isActive = (href) => pathname === href;
 
   return (
-    <header className="shadow-[0_2px_16px_rgba(0,0,0,0.07)] bg-white sticky top-0 z-[200]">
+    <header className="sticky top-0 z-[200] w-full bg-white shadow-[0_2px_16px_rgba(0,0,0,0.07)]">
       <div className="max-w-[1200px] mx-auto px-4 sm:px-6 flex items-center justify-between h-[70px]">
 
         {/* Brand */}
