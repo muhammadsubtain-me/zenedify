@@ -4,7 +4,7 @@ export default function WhatsAppButton() {
       href="https://wa.me/923042335382"
       target="_blank"
       rel="noopener noreferrer"
-      className="fixed bottom-5 left-5 z-[250] flex h-14 w-14 items-center justify-center rounded-full bg-[#25D366] text-white shadow-[0_4px_14px_rgba(37,211,102,0.45)] transition-transform hover:scale-105 hover:shadow-[0_6px_20px_rgba(37,211,102,0.55)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#25D366]"
+      className="fixed bottom-5 right-5 z-[250] flex h-14 w-14 items-center justify-center rounded-full bg-[#25D366] text-white shadow-[0_4px_14px_rgba(37,211,102,0.45)] transition-transform hover:scale-105 hover:shadow-[0_6px_20px_rgba(37,211,102,0.55)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#25D366]"
       aria-label="Chat with ZenEdify on WhatsApp"
     >
       <svg
