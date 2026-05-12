@@ -14,6 +14,9 @@ const engineeringLinks = [
   { to: '/computer-science',       label: '💻  Computer Science'       },
 ];
 
+const navUnderline =
+  "relative pb-0.5 after:content-[''] after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:bg-blue-600 after:transition-[width] after:duration-200 after:ease-out hover:after:w-full";
+
 export default function Navbar() {
   const pathname = usePathname();
 
@@ -43,17 +46,17 @@ export default function Navbar() {
         <nav className="hidden lg:flex gap-6 items-center">
           <Link
             href="/"
-            className={`nav-link-underline text-[13.5px] no-underline transition-colors ${isActive('/') ? 'text-blue-600 font-semibold' : 'text-gray-700 font-medium hover:text-blue-600'}`}
+            className={`${navUnderline} text-[13.5px] no-underline transition-colors ${isActive('/') ? 'text-blue-600 font-semibold' : 'text-gray-700 font-medium hover:text-blue-600'}`}
           >
             Home
           </Link>
 
-          {/* Services dropdown — pure CSS hover */}
-          <div className="services-dropdown-wrapper relative flex items-center self-stretch cursor-default">
-            <span className="nav-link-underline text-gray-700 font-medium text-[13.5px] select-none">
+          {/* Services dropdown — group hover */}
+          <div className="group relative flex items-center self-stretch cursor-default">
+            <span className={`${navUnderline} text-gray-700 font-medium text-[13.5px] select-none`}>
               Services
             </span>
-            <div className="services-dropdown-menu absolute top-full left-1/2 bg-white rounded-lg shadow-[0_8px_32px_rgba(0,0,0,0.12)] border border-slate-200 py-2 min-w-[240px] z-[300]">
+            <div className="absolute top-full left-1/2 z-[300] min-w-[240px] -translate-x-1/2 -translate-y-1.5 rounded-lg border border-slate-200 bg-white py-2 opacity-0 shadow-[0_8px_32px_rgba(0,0,0,0.12)] pointer-events-none transition-[opacity,transform] duration-200 ease-out group-hover:pointer-events-auto group-hover:translate-y-0 group-hover:opacity-100">
               <div className="px-4 py-1.5 text-[11px] font-bold text-slate-400 uppercase tracking-widest">
                 Disciplines
               </div>
@@ -61,7 +64,7 @@ export default function Navbar() {
                 <Link
                   key={l.to}
                   href={l.to}
-                  className="services-dropdown-item block px-4 py-2.5 text-[13.5px] text-gray-700 no-underline font-medium transition-colors"
+                  className="block px-4 py-2.5 text-[13.5px] font-medium text-gray-700 no-underline transition-colors hover:bg-blue-50 hover:!text-blue-600"
                 >
                   {l.label}
                 </Link>
@@ -73,7 +76,7 @@ export default function Navbar() {
             <Link
               key={l.to}
               href={l.to}
-              className={`nav-link-underline text-[13.5px] no-underline transition-colors ${isActive(l.to) ? 'text-blue-600 font-semibold' : 'text-gray-700 font-medium hover:text-blue-600'}`}
+              className={`${navUnderline} text-[13.5px] no-underline transition-colors ${isActive(l.to) ? 'text-blue-600 font-semibold' : 'text-gray-700 font-medium hover:text-blue-600'}`}
             >
               {l.label}
             </Link>

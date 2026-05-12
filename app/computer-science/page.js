@@ -66,9 +66,9 @@ export default function ComputerScience() {
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {topics.map((t, i) => (
-              <Card key={i} className="card-hover cursor-default">
+              <Card key={i} className="group relative cursor-default overflow-hidden transition-all duration-[350ms] hover:-translate-y-1.5 hover:!border-blue-600 hover:shadow-[0_20px_40px_rgba(37,99,235,0.18)]">
                 <CardHeader>
-                  <div className="service-icon w-14 h-14 rounded-[14px] flex items-center justify-center text-[26px] mb-3.5 transition-transform duration-300 bg-orange-50 text-orange-600">
+                  <div className="w-14 h-14 rounded-[14px] flex items-center justify-center text-[26px] mb-3.5 transition-transform duration-300 group-hover:scale-[1.12] group-hover:-rotate-[4deg] bg-orange-50 text-orange-600">
                     {t.icon}
                   </div>
                   <CardTitle>{t.title}</CardTitle>

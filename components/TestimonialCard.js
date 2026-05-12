@@ -3,7 +3,7 @@ import { Separator } from './ui/separator';
 
 export default function TestimonialCard({ name, role, text, initials }) {
   return (
-    <Card className="testimonial-card-hover relative bg-white rounded-2xl shadow-[0_4px_24px_rgba(0,0,0,0.07)] border border-slate-200 overflow-hidden transition-all duration-300">
+    <Card className="relative overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-[0_4px_24px_rgba(0,0,0,0.07)] transition-all duration-300 hover:-translate-y-1 hover:!border-blue-600 hover:shadow-[0_16px_40px_rgba(37,99,235,0.14)]">
       <CardHeader className="pb-0 pt-7 px-7">
         <div className="flex gap-1 text-amber-400 text-lg">{'★★★★★'}</div>
       </CardHeader>

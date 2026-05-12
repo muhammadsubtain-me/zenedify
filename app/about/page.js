@@ -78,7 +78,7 @@ export default function About() {
           <SectionHeader subtitle="Our Principles" title="Our Core Values" desc="The foundation that guides everything we do at ZenEdify." />
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-7">
             {values.map(v => (
-              <Card key={v.title} className="card-hover">
+              <Card key={v.title} className="group relative overflow-hidden transition-all duration-[350ms] hover:-translate-y-1.5 hover:!border-blue-600 hover:shadow-[0_20px_40px_rgba(37,99,235,0.18)]">
                 <CardHeader>
                   <div className="text-[36px] mb-2">{v.icon}</div>
                   <CardTitle className="text-lg">{v.title}</CardTitle>
@@ -98,7 +98,7 @@ export default function About() {
           <SectionHeader subtitle="Our Experts" title="ZenEdify Experts" desc="Meet some of our world-class academic tutors ready to help you succeed." />
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-7">
             {team.map(t => (
-              <Card key={t.name} className="card-hover text-center">
+              <Card key={t.name} className="group relative overflow-hidden text-center transition-all duration-[350ms] hover:-translate-y-1.5 hover:!border-blue-600 hover:shadow-[0_20px_40px_rgba(37,99,235,0.18)]">
                 <CardHeader className="items-center">
                   <div className="text-[56px] mb-2">{t.emoji}</div>
                   <CardTitle className="text-sm">{t.name}</CardTitle>

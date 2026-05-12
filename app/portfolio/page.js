@@ -39,7 +39,7 @@ export default function Portfolio() {
         <div className="max-w-[1200px] mx-auto">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-7">
             {projects.map((p, i) => (
-              <Card key={i} className="card-hover overflow-hidden flex flex-col">
+              <Card key={i} className="group relative flex flex-col overflow-hidden transition-all duration-[350ms] hover:-translate-y-1.5 hover:!border-blue-600 hover:shadow-[0_20px_40px_rgba(37,99,235,0.18)]">
                 <div className="bg-gradient-to-br from-blue-100 to-violet-100 h-[120px] flex items-center justify-center text-[56px]">
                   {p.emoji}
                 </div>
