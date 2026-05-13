@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 
 const disciplineLinks = [
   { to: '/mechanical-engineering', label: '⚙️  Mechanical Engineering' },
@@ -33,6 +34,13 @@ export default function Footer() {
           {/* Brand */}
           <div>
             <div className="flex items-center gap-2.5 mb-4">
+              <Image
+                src="/assets/logo.png"
+                alt="ZenEdify logo"
+                width={44}
+                height={44}
+                className="h-11 w-11 shrink-0 object-contain scale-[2.25]"
+              />
               <span className="text-white font-extrabold text-[22px]">ZenEdify</span>
             </div>
             <p className="text-sm leading-[1.7] mb-5">
