@@ -11,8 +11,8 @@ import { Separator } from './ui/separator';
 const engineeringLinks = [
   { to: '/mechanical-engineering', label: '⚙️  Mechanical Engineering' },
   { to: '/electrical-engineering', label: '⚡  Electrical Engineering' },
-  { to: '/chemical-engineering',   label: '🧪  Chemical Engineering'   },
-  { to: '/computer-science',       label: '💻  Computer Science'       },
+  { to: '/chemical-engineering', label: '🧪  Chemical Engineering' },
+  { to: '/computer-science', label: '💻  Computer Science' },
 ];
 
 const navUnderline =
@@ -22,11 +22,11 @@ export default function Navbar() {
   const pathname = usePathname();
 
   const links = [
-    { to: '/samples',   label: 'Samples'   },
-    { to: '/about',     label: 'About'     },
-    { to: '/contact',   label: 'Contact'   },
+    { to: '/samples', label: 'Samples' },
+    { to: '/about', label: 'About' },
+    { to: '/contact', label: 'Contact' },
     { to: '/portfolio', label: 'Portfolio' },
-    { to: '/faqs',      label: 'FAQs'      },
+    { to: '/faqs', label: 'FAQs' },
   ];
 
   const isActive = (href) => pathname === href;
@@ -100,27 +100,27 @@ export default function Navbar() {
             </Button>
           </SheetTrigger>
           <SheetContent side="right" className="w-[280px] sm:w-[320px]">
-           <SheetHeader>
-  <SheetTitle asChild className="!line-clamp-none !whitespace-normal !h-auto">
-    <div className="flex items-center gap-2 leading-tight">
-    <Image
-                src="/assets/logo.png"
-                alt="ZenEdify logo"
-                width={44}
-                height={44}
-                className="h-11 w-11 shrink-0 scale-[2.25] object-contain"
-              />
-      <span className="flex flex-col items-start">
-        <span className="font-extrabold text-xl text-slate-900">
-          ZenEdify
-        </span>
-        <span className="text-[10px] text-slate-600 font-medium mt-0.5">
-          Place of Experts
-        </span>
-      </span>
-    </div>
-  </SheetTitle>
-</SheetHeader>
+            <SheetHeader>
+              <SheetTitle asChild className="!line-clamp-none !whitespace-normal !h-auto">
+                <div className="flex items-center gap-2 leading-tight">
+                  <Image
+                    src="/assets/logo.png"
+                    alt="ZenEdify logo"
+                    width={44}
+                    height={44}
+                    className="h-11 w-11 shrink-0 scale-[2.25] object-contain"
+                  />
+                  <span className="flex flex-col items-start">
+                    <span className="font-extrabold text-xl text-slate-900">
+                      ZenEdify
+                    </span>
+                    <span className="text-[10px] text-slate-600 font-medium mt-0.5">
+                      Place of Experts
+                    </span>
+                  </span>
+                </div>
+              </SheetTitle>
+            </SheetHeader>
             <div className="px-6 py-4 space-y-1">
               <SheetClose asChild>
                 <Link href="/" className="block py-2.5 text-gray-700 no-underline font-medium text-[15px] hover:text-blue-600 transition-colors">
