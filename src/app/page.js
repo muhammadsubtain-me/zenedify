@@ -6,6 +6,8 @@ import SectionHeader from '../components/SectionHeader';
 import AnimatedCounter from '../components/AnimatedCounter';
 import { Button } from '../components/ui/button';
 import { services, testimonials, stats } from '../data/index';
+import personTeaching from '@/assets/PersonTeaching.png';
+import aboutUs from '@/assets/AboutUs.png';
 
 export const metadata = {
   title: 'Home',
@@ -42,7 +44,7 @@ export default function Home() {
           {/* Image */}
           <div className="animate-float flex justify-center items-center order-2 lg:order-2 px-2 py-8 sm:p-10 sm:pr-[55px] min-w-0 max-w-full overflow-x-clip pr-[35px]">
             <Image
-              src="/assets/PersonTeaching.png"
+              src={personTeaching}
               alt="Academic Expert"
               width={380}
               height={380}
@@ -78,7 +80,7 @@ export default function Home() {
           <div className="flex justify-center items-center">
           <div className="animate-float flex justify-center items-center order-2 lg:order-2 px-2 py-8 sm:p-10 sm:pr-[55px] min-w-0 max-w-full overflow-x-clip">
             <Image
-              src="/assets/AboutUs.png"
+              src={aboutUs}
               alt="About Us"
               width={380}
               height={380}

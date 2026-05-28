@@ -1,7 +1,6 @@
 'use client';
 
 import Link from 'next/link';
-import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import { Menu } from 'lucide-react';
 import { Button } from './ui/button';
@@ -37,14 +36,6 @@ export default function Navbar() {
 
         {/* Brand */}
         <Link href="/" className="no-underline flex items-center gap-2">
-          <Image
-            src="/assets/logo.png"
-            alt="ZenEdify logo"
-            width={42}
-            height={42}
-            className="h-10 w-10 shrink-0 scale-[2.25] object-contain"
-            priority
-          />
           <div>
             <div className="font-extrabold text-[22px] text-slate-900 leading-none">Zen<span className="text-blue-600">Edify</span></div>
             <div className="text-[10px] text-slate-600 font-medium ml-1.5 mt-0.5">Place of Experts</div>
@@ -103,13 +94,6 @@ export default function Navbar() {
             <SheetHeader>
               <SheetTitle asChild className="!line-clamp-none !whitespace-normal !h-auto">
                 <div className="flex items-center gap-2 leading-tight">
-                  <Image
-                    src="/assets/logo.png"
-                    alt="ZenEdify logo"
-                    width={44}
-                    height={44}
-                    className="h-11 w-11 shrink-0 scale-[2.25] object-contain"
-                  />
                   <span className="flex flex-col items-start">
                     <span className="font-extrabold text-xl text-slate-900">
                       ZenEdify
